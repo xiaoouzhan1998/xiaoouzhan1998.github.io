@@ -187,6 +187,13 @@
       border-left: 3px solid var(--accent);
     }
 
+    .paper.featured {
+      border-left-color: #e67e22;
+      background: #fef9f3;
+      padding: 16px 18px;
+      border-radius: 0 6px 6px 0;
+    }
+
     .paper .paper-title {
       font-weight: 700;
       font-size: 1rem;
@@ -200,6 +207,18 @@
       font-weight: 600;
       color: var(--accent);
       background: #fde8e6;
+      padding: 2px 8px;
+      border-radius: 3px;
+      margin-left: 6px;
+      vertical-align: middle;
+    }
+
+    .paper .paper-title .ai-badge {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #e67e22;
+      background: #fef0db;
       padding: 2px 8px;
       border-radius: 3px;
       margin-left: 6px;
@@ -243,8 +262,12 @@
 
     /* Experience */
     .exp-item {
-      margin-bottom: 30px;
+      margin-bottom: 22px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--border);
     }
+
+    .exp-item:last-child { border-bottom: none; }
 
     .exp-header {
       display: flex;
@@ -265,22 +288,10 @@
       color: var(--light-text);
     }
 
-    .exp-supervisor {
+    .exp-topic {
       font-size: 0.9rem;
       color: var(--light-text);
-      font-style: italic;
-      margin-top: 2px;
-    }
-
-    .exp-details {
-      margin-top: 6px;
-      padding-left: 18px;
-    }
-
-    .exp-details li {
-      font-size: 0.9rem;
-      color: var(--light-text);
-      margin-bottom: 4px;
+      margin-top: 3px;
     }
 
     /* Teaching */
@@ -305,8 +316,8 @@
     /* Skills */
     .skills-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 24px;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
     }
 
     .skill-category h3 {
@@ -368,7 +379,6 @@
       <li><a href="#about">About</a></li>
       <li><a href="#education">Education</a></li>
       <li><a href="#research">Research</a></li>
-      <li><a href="#conferences">Conferences</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#teaching">Teaching</a></li>
       <li><a href="#skills">Skills</a></li>
@@ -383,10 +393,10 @@
       <a href="mailto:xzhan23@wisc.edu">xzhan23@wisc.edu</a>
     </p>
     <div class="research-interests">
-      <span class="tag">Public Economics</span>
       <span class="tag">Urban Economics</span>
-      <span class="tag">Real Estate Economics</span>
-      <span class="tag">Housing Policy</span>
+      <span class="tag">Environmental Economics</span>
+      <span class="tag">Criminal Justice</span>
+      <span class="tag">AI &amp; Algorithmic Fairness</span>
     </div>
   </header>
 
@@ -396,27 +406,19 @@
       <h2 class="section-title">Education</h2>
 
       <div class="edu-item">
-        <div><span class="school">University of Wisconsin–Madison</span><span class="date">Expected May 2027</span></div>
+        <div><span class="school">University of Wisconsin–Madison</span><span class="date">Expected 2028</span></div>
         <div class="degree">Ph.D., Economics and Real Estate (Joint Program)</div>
-        <div class="details">Department of Economics &amp; Department of Real Estate and Urban Land Economics, Wisconsin School of Business</div>
-        <div class="details">Fields: Public Economics, Urban Economics</div>
-        <div class="details">Advisors: Professor Christopher Timmins and Professor Jesse Gregory</div>
+        <div class="details">Fields: Urban Economics, Public Economics</div>
       </div>
 
       <div class="edu-item">
-        <div><span class="school">Duke University</span><span class="date">May 2022</span></div>
+        <div><span class="school">Duke University</span><span class="date">2022</span></div>
         <div class="degree">Joint M.S. in Economics and Computer Science</div>
       </div>
 
       <div class="edu-item">
-        <div><span class="school">Haverford College</span><span class="date">May 2020</span></div>
+        <div><span class="school">Haverford College</span><span class="date">2020</span></div>
         <div class="degree">B.S. in Mathematics; Minors in Economics and History</div>
-        <div class="details">Senior Thesis: <em>Calculus of Variations and Optimal Control Theory on Optimal Economic Growth</em></div>
-      </div>
-
-      <div class="edu-item">
-        <div><span class="school">Sciences Po, Paris</span><span class="date">Summer 2017</span></div>
-        <div class="degree">Summer Exchange Program: Political Economy and Intermediate French</div>
       </div>
     </div>
   </section>
@@ -424,22 +426,12 @@
   <!-- Working Papers -->
   <section id="research">
     <div class="container">
-      <h2 class="section-title">Working Papers</h2>
+      <h2 class="section-title">Research</h2>
 
-      <div class="paper">
-        <div class="paper-title">
-          "Does Eviction Break or Perpetuate Domestic Violence Cycles? Gender-Heterogeneous DV Dynamics Around Eviction in Wisconsin Court Records"
-          <span class="jmp">Job Market Paper</span>
-        </div>
-        <div class="authors">Single-authored</div>
-        <div class="abstract">
-          Links 163,000 eviction filings, 57,000 DV criminal cases, and 26,000 restraining orders from Wisconsin courts to 13.2 million person-years of address histories. Introduces a novel address-based DV exposure measure to show that both male abusers and female survivors experience DV declines post-eviction through different channels: partner separation and residential displacement, respectively.
-        </div>
-      </div>
-
-      <div class="paper">
+      <div class="paper featured">
         <div class="paper-title">
           "The AI Housing Advisor: Information Democratization or Algorithmic Discrimination?"
+          <span class="ai-badge">AI Policy</span>
         </div>
         <div class="authors">Single-authored</div>
         <div class="abstract">
@@ -449,11 +441,23 @@
 
       <div class="paper">
         <div class="paper-title">
-          "Court Record and Tenant Screening Algorithm, and Housing Discrimination"
+          "Does Eviction Break or Perpetuate Domestic Violence Cycles? Dynamics Around Eviction in Wisconsin Court Records"
+          <span class="jmp">Job Market Paper</span>
         </div>
-        <div class="authors">With Molly Clark Barol and Christopher Timmins. Working Paper, 2026.</div>
+        <div class="authors">Single-authored</div>
         <div class="abstract">
-          Links Wisconsin's public court records (CCAP) to consumer data and shows that individuals sharing names with court-record holders are sorted into lower-rent, higher-poverty neighborhoods — consistent with algorithmic tenant screening penalizing common-name individuals. Confirms the mechanism using Levenshtein name-distance fuzzy matching.
+          Links 163,000 eviction filings, 57,000 DV criminal cases, and 26,000 restraining orders from Wisconsin courts to 13.2 million person-years of address histories. Introduces a novel address-based DV exposure measure to show that both male abusers and female survivors experience increased domestic violence exposure post-eviction through different channels: family separation and landlord discrimination, respectively.
+        </div>
+      </div>
+
+      <div class="paper">
+        <div class="paper-title">
+          "Court Record and Tenant Screening Algorithm, and Housing Discrimination"
+          <span class="ai-badge">Algorithmic Fairness</span>
+        </div>
+        <div class="authors">With Molly Clark Barol and Christopher Timmins</div>
+        <div class="abstract">
+          Links Wisconsin's public court records to consumer data and shows that individuals sharing names with court-record holders are sorted into lower-rent, higher-poverty neighborhoods — consistent with algorithmic tenant screening penalizing common-name individuals.
         </div>
       </div>
 
@@ -473,37 +477,13 @@
         </div>
         <div class="authors">Single-authored</div>
         <div class="abstract">
-          Examines whether place-based environmental cleanup programs lead to displacement of vulnerable populations through retail gentrification. Using household-level longitudinal data from Cook County, IL (2010–2019), combines Illinois EPA brownfield remediation records, the InfoUSA household panel, and the NETS retail database within a Callaway &amp; Sant'Anna difference-in-differences and propensity-score-matched probit framework. Finds that brownfield cleanup initially reduces out-migration, but subsequent retail amenity growth significantly increases displacement of minority renters to more polluted neighborhoods.
+          Examines whether place-based environmental cleanup programs lead to displacement of vulnerable populations through retail gentrification. Finds that brownfield cleanup initially reduces out-migration, but subsequent retail amenity growth significantly increases displacement of minority renters to more polluted neighborhoods.
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Conferences -->
-  <section id="conferences">
-    <div class="container">
-      <h2 class="section-title">Conference Presentations</h2>
-
-      <div class="conf-item">
-        <span class="conf-name">Midwest International Trade Conference, Columbus, OH</span>
-        <span class="conf-date">April 2026</span>
-      </div>
-      <div class="conf-item">
-        <span class="conf-name">UIUC Heartland Environmental Workshop</span>
-        <span class="conf-date">November 2025</span>
-      </div>
-      <div class="conf-item">
-        <span class="conf-name">AERE Summer Conference, Santa Ana Pueblo, NM</span>
-        <span class="conf-date">May 2025</span>
-      </div>
-      <div class="conf-item">
-        <span class="conf-name">Modern Language Association (MLA) Annual Convention</span>
-        <span class="conf-date">2021</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- Research Experience -->
+  <!-- Research Experience (condensed) -->
   <section id="experience">
     <div class="container">
       <h2 class="section-title">Research Experience</h2>
@@ -511,73 +491,33 @@
       <div class="exp-item">
         <div class="exp-header">
           <span class="exp-role">Research Assistant · University of Wisconsin–Madison</span>
-          <span class="exp-date">Sept 2022 – Present</span>
+          <span class="exp-date">2022 – Present</span>
         </div>
-        <div class="exp-supervisor">Supervisor: Professor Christopher Timmins</div>
-        <ul class="exp-details">
-          <li>COVID-19 eviction moratorium law and housing discrimination</li>
-        </ul>
+        <div class="exp-topic">Eviction policy, housing discrimination, and fair housing</div>
       </div>
 
       <div class="exp-item">
         <div class="exp-header">
-          <span class="exp-role">Research Assistant · UC Berkeley (remote)</span>
-          <span class="exp-date">Jan 2024 – Dec 2025</span>
+          <span class="exp-role">Research Assistant · UC Berkeley</span>
+          <span class="exp-date">2024 – 2025</span>
         </div>
-        <div class="exp-supervisor">Supervisor: Professor Paige Weber</div>
-        <ul class="exp-details">
-          <li>Welfare gap in the change in local air quality</li>
-        </ul>
+        <div class="exp-topic">Environmental justice and welfare analysis of local air quality changes</div>
       </div>
 
       <div class="exp-item">
         <div class="exp-header">
-          <span class="exp-role">Research Assistant · Duke University, Department of Economics</span>
-          <span class="exp-date">May 2021 – Aug 2022</span>
+          <span class="exp-role">Research Assistant · Duke University</span>
+          <span class="exp-date">2021 – 2022</span>
         </div>
-        <div class="exp-supervisor">Supervisor: Professor Christopher Timmins</div>
-        <ul class="exp-details">
-          <li>Investigated racial disparities in household energy burden across the Southeast United States</li>
-          <li>Estimated household energy burden at the block group level using iterative proportional fitting</li>
-          <li>Generated energy expenditure predictions by household type using random forest regression</li>
-          <li>Analyzed how energy burden varies by race, heating fuel type, and historical redlining</li>
-        </ul>
+        <div class="exp-topic">Racial disparities in household energy burden; machine learning prediction of energy expenditures</div>
       </div>
 
       <div class="exp-item">
         <div class="exp-header">
-          <span class="exp-role">Researcher · Duke University, Information Science + Studies &amp; English Dept.</span>
-          <span class="exp-date">May 2020 – Jan 2021</span>
+          <span class="exp-role">Data+ Research Fellow · Duke University</span>
+          <span class="exp-date">2019 – 2021</span>
         </div>
-        <div class="exp-supervisor">Supervisors: Professor Astrid Giugni and Professor Jessica Hines</div>
-        <ul class="exp-details">
-          <li>Conducted research on consumerism in Medieval and Early Modern European texts</li>
-          <li>Assessed the development of economic and political ideas in early modern literature</li>
-        </ul>
-      </div>
-
-      <div class="exp-item">
-        <div class="exp-header">
-          <span class="exp-role">Researcher · Duke University, Rhodes Information Initiative (Bass Connections)</span>
-          <span class="exp-date">May 2019 – June 2020</span>
-        </div>
-        <div class="exp-supervisor">Supervisor: Professor Charlotte Sussman</div>
-        <ul class="exp-details">
-          <li>Analyzed mortality of enslaved Africans in the transatlantic slave trade using the Trans-Atlantic Slave Trade Database (34,948 voyages)</li>
-          <li>Predicted voyage paths of ships missing from historical archives using differential equations</li>
-          <li>Modeled economic factors underlying mortality rates using statistical methods</li>
-        </ul>
-      </div>
-
-      <div class="exp-item">
-        <div class="exp-header">
-          <span class="exp-role">Intern · Bank of China, Bank Card Division</span>
-          <span class="exp-date">June – Aug 2018</span>
-        </div>
-        <ul class="exp-details">
-          <li>Assisted research on financial inclusion and credit card rating for inclusive finance program</li>
-          <li>Cleaned and organized credibility data using R and SQL; developed a credibility assessment model using regression analysis</li>
-        </ul>
+        <div class="exp-topic">NLP and computational text analysis; LSTM-based historical data modeling</div>
       </div>
     </div>
   </section>
@@ -585,36 +525,31 @@
   <!-- Teaching -->
   <section id="teaching">
     <div class="container">
-      <h2 class="section-title">Teaching Experience</h2>
+      <h2 class="section-title">Teaching</h2>
 
-      <h3 style="font-size:0.95rem; color:var(--primary); margin-bottom:14px;">University of Wisconsin–Madison</h3>
+      <p style="font-size:0.92rem; color:var(--light-text); margin-bottom:18px;">
+        Teaching Assistant, University of Wisconsin–Madison (2022–Present)
+      </p>
 
       <div class="teaching-item">
-        <span class="teaching-course">Ph.D. Urban Economics</span> ·
-        <span class="teaching-prof">Prof. Christopher Timmins</span> ·
-        <span class="teaching-term">Fall 2024</span>
+        <span class="teaching-course">Fair Housing</span> ·
+        <span class="teaching-term">Spring 2026, Spring 2024</span>
       </div>
       <div class="teaching-item">
-        <span class="teaching-course">Affordable Housing Justice</span> ·
-        <span class="teaching-prof">Dr. Dina Lomonosov</span> ·
-        <span class="teaching-term">Spring 2024</span>
+        <span class="teaching-course">Sustainable Development and Housing</span> ·
+        <span class="teaching-term">Fall 2025</span>
+      </div>
+      <div class="teaching-item">
+        <span class="teaching-course">Ph.D. Urban Economics</span> ·
+        <span class="teaching-term">Fall 2025, Fall 2024</span>
       </div>
       <div class="teaching-item">
         <span class="teaching-course">Real Estate Finance</span> ·
-        <span class="teaching-prof">Prof. Abdullah Yavas</span> ·
         <span class="teaching-term">Fall 2023</span>
       </div>
       <div class="teaching-item">
         <span class="teaching-course">Undergraduate Urban Economics</span> ·
-        <span class="teaching-prof">Prof. Christopher Timmins</span> ·
         <span class="teaching-term">Fall 2022, Spring 2023</span>
-      </div>
-
-      <h3 style="font-size:0.95rem; color:var(--primary); margin: 20px 0 14px;">Haverford College</h3>
-
-      <div class="teaching-item">
-        <span class="teaching-course">Differential Equations &amp; Applied Modeling with Calculus</span> ·
-        <span class="teaching-term">Jan 2018 – Dec 2019</span>
       </div>
     </div>
   </section>
@@ -629,19 +564,29 @@
           <h3>Programming</h3>
           <div class="skill-tags">
             <span class="skill-tag">Python</span>
-            <span class="skill-tag">Julia</span>
             <span class="skill-tag">R</span>
-            <span class="skill-tag">MATLAB</span>
+            <span class="skill-tag">Julia</span>
             <span class="skill-tag">Stata</span>
             <span class="skill-tag">SQL</span>
+            <span class="skill-tag">MATLAB</span>
+            <span class="skill-tag">Bash</span>
           </div>
         </div>
         <div class="skill-category">
-          <h3>Software</h3>
+          <h3>AI / Machine Learning</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">LLM APIs (OpenAI, Anthropic, Google)</span>
+            <span class="skill-tag">PyTorch</span>
+            <span class="skill-tag">scikit-learn</span>
+            <span class="skill-tag">NLP (spaCy, NLTK)</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3>Software &amp; Tools</h3>
           <div class="skill-tags">
             <span class="skill-tag">ArcGIS</span>
             <span class="skill-tag">Tableau</span>
-            <span class="skill-tag">Excel</span>
+            <span class="skill-tag">Git</span>
           </div>
         </div>
         <div class="skill-category">
@@ -659,7 +604,7 @@
   <!-- Footer -->
   <footer>
     <p>Xiaoou Zhan (Daisy) · <a href="mailto:xzhan23@wisc.edu">xzhan23@wisc.edu</a></p>
-    <p style="margin-top:6px; font-size:0.8rem;">University of Wisconsin–Madison · Department of Economics</p>
+    <p style="margin-top:6px; font-size:0.8rem;">University of Wisconsin–Madison</p>
   </footer>
 
   <!-- Smooth scroll highlight -->
