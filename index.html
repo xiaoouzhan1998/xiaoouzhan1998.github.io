@@ -267,6 +267,27 @@
       line-height: 1.65;
     }
 
+    /* Conferences */
+    .conf-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .conf-item:last-child { border-bottom: none; }
+
+    .conf-name { font-size: 0.95rem; }
+
+    .conf-date {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.85rem;
+      color: var(--light-text);
+      white-space: nowrap;
+      margin-left: 20px;
+    }
+
     /* Experience */
     .exp-item {
       margin-bottom: 22px;
@@ -378,6 +399,8 @@
       .edu-item .date { float: none; display: block; margin-top: 2px; }
       .skills-grid { grid-template-columns: 1fr; }
       .exp-header { flex-direction: column; }
+      .conf-item { flex-direction: column; }
+      .conf-date { margin-left: 0; margin-top: 2px; }
     }
   </style>
 </head>
@@ -389,6 +412,7 @@
       <li><a href="#bio">Bio</a></li>
       <li><a href="#education">Education</a></li>
       <li><a href="#research">Research</a></li>
+      <li><a href="#conferences">Conferences</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#teaching">Teaching</a></li>
       <li><a href="#skills">Skills</a></li>
@@ -504,6 +528,30 @@
         <div class="abstract">
           Examines whether place-based environmental cleanup programs lead to displacement of vulnerable populations through retail gentrification. Finds that brownfield cleanup initially reduces out-migration, but subsequent retail amenity growth significantly increases displacement of minority renters to more polluted neighborhoods.
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Conferences -->
+  <section id="conferences">
+    <div class="container">
+      <h2 class="section-title">Conference Presentations</h2>
+
+      <div class="conf-item">
+        <span class="conf-name">Midwest International Trade Conference, Columbus, OH</span>
+        <span class="conf-date">April 2026</span>
+      </div>
+      <div class="conf-item">
+        <span class="conf-name">UIUC Heartland Environmental Workshop</span>
+        <span class="conf-date">November 2025</span>
+      </div>
+      <div class="conf-item">
+        <span class="conf-name">AERE Summer Conference, Santa Ana Pueblo, NM</span>
+        <span class="conf-date">May 2025</span>
+      </div>
+      <div class="conf-item">
+        <span class="conf-name">Modern Language Association (MLA) Annual Convention</span>
+        <span class="conf-date">January 2021</span>
       </div>
     </div>
   </section>
