@@ -17,7 +17,6 @@
       --card-bg: #ffffff;
       --border: #e5ddd4;
       --section-bg: #f3ece4;
-      --hero-bg: #f3ece4;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -68,46 +67,46 @@
       background: rgba(255,255,255,0.1);
     }
 
-    /* Hero — side by side layout */
+    /* Hero — full viewport landing */
     .hero {
       margin-top: 48px;
-      padding: 60px 20px;
-      background: var(--hero-bg);
+      min-height: calc(100vh - 48px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--section-bg);
+      padding: 40px 20px;
     }
 
     .hero-inner {
-      max-width: 820px;
-      margin: 0 auto;
+      max-width: 900px;
       display: flex;
+      flex-direction: column;
       align-items: center;
-      gap: 50px;
+      text-align: center;
+      gap: 30px;
     }
 
     .hero .photo {
-      width: 280px;
-      height: 280px;
+      width: 320px;
+      height: 320px;
       border-radius: 50%;
       object-fit: cover;
-      border: 4px solid var(--border);
-      flex-shrink: 0;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-    }
-
-    .hero-text {
-      flex: 1;
+      border: 5px solid var(--border);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.1);
     }
 
     .hero-text h1 {
-      font-size: 2.4rem;
+      font-size: 2.8rem;
       font-weight: 400;
       letter-spacing: 1px;
       color: var(--primary);
-      margin-bottom: 6px;
+      margin-bottom: 8px;
     }
 
     .hero-text .subtitle {
       font-family: 'Helvetica Neue', Arial, sans-serif;
-      font-size: 1rem;
+      font-size: 1.1rem;
       color: var(--light-text);
       margin-bottom: 14px;
       font-weight: 300;
@@ -117,7 +116,7 @@
       font-family: 'Helvetica Neue', Arial, sans-serif;
       font-size: 0.9rem;
       color: var(--light-text);
-      margin-bottom: 18px;
+      margin-bottom: 20px;
     }
 
     .hero-text .contact-info a {
@@ -130,10 +129,20 @@
       border-bottom-color: var(--accent);
     }
 
+    .hero-text .bio {
+      font-size: 0.95rem;
+      color: var(--light-text);
+      line-height: 1.8;
+      max-width: 640px;
+      margin: 0 auto 20px;
+    }
+
     .hero-text .research-interests {
       display: flex;
+      justify-content: center;
       flex-wrap: wrap;
       gap: 8px;
+      margin-bottom: 24px;
     }
 
     .hero-text .tag {
@@ -145,6 +154,26 @@
       color: var(--primary);
       background: var(--card-bg);
       letter-spacing: 0.3px;
+    }
+
+    .scroll-hint {
+      margin-top: 10px;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.8rem;
+      color: var(--border);
+      letter-spacing: 1px;
+      animation: bounce 2s infinite;
+    }
+
+    .scroll-hint span {
+      display: block;
+      font-size: 1.4rem;
+      margin-top: 4px;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(6px); }
     }
 
     /* Sections */
@@ -173,13 +202,6 @@
       padding-bottom: 10px;
       border-bottom: 2px solid var(--accent);
       display: inline-block;
-    }
-
-    /* About Me */
-    .about-text {
-      font-size: 0.95rem;
-      color: var(--light-text);
-      line-height: 1.8;
     }
 
     /* Education */
@@ -391,13 +413,8 @@
 
     /* Responsive */
     @media (max-width: 700px) {
-      .hero-inner {
-        flex-direction: column;
-        text-align: center;
-      }
-      .hero .photo { width: 220px; height: 220px; }
-      .hero-text .research-interests { justify-content: center; }
-      .hero-text h1 { font-size: 1.8rem; }
+      .hero .photo { width: 240px; height: 240px; }
+      .hero-text h1 { font-size: 2rem; }
       nav a { padding: 10px 12px; font-size: 0.78rem; }
       .edu-item .date { float: none; display: block; margin-top: 2px; }
       .skills-grid { grid-template-columns: 1fr; }
@@ -411,8 +428,7 @@
 
   <nav>
     <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#bio">Bio</a></li>
+      <li><a href="#about">Home</a></li>
       <li><a href="#education">Education</a></li>
       <li><a href="#research">Research</a></li>
       <li><a href="#conferences">Conferences</a></li>
@@ -422,7 +438,7 @@
     </ul>
   </nav>
 
-  <!-- Hero -->
+  <!-- Hero — full viewport landing page -->
   <header class="hero" id="about">
     <div class="hero-inner">
       <img src="website_photo.JPG" alt="Xiaoou Zhan" class="photo">
@@ -432,6 +448,9 @@
         <p class="contact-info">
           <a href="mailto:xzhan23@wisc.edu">xzhan23@wisc.edu</a>
         </p>
+        <p class="bio">
+          I study how algorithms, public policies, and housing markets shape inequality — with a focus on AI fairness in housing search, eviction and domestic violence, and environmental gentrification. Outside of research, I enjoy creative writing in both fiction and nonfiction, traveling, and hiking.
+        </p>
         <div class="research-interests">
           <span class="tag">Urban Economics</span>
           <span class="tag">Environmental Economics</span>
@@ -439,21 +458,11 @@
           <span class="tag">AI &amp; Algorithmic Fairness</span>
         </div>
       </div>
+      <div class="scroll-hint">
+        <span>&#8595;</span>
+      </div>
     </div>
   </header>
-
-  <!-- About Me -->
-  <section id="bio">
-    <div class="container">
-      <h2 class="section-title">About Me</h2>
-      <p class="about-text">
-        I am a Ph.D. candidate in Economics and Real Estate at the University of Wisconsin–Madison. My research examines how algorithms, public policies, and housing markets shape inequality — with a focus on AI fairness in housing search, eviction and domestic violence, and environmental gentrification. I hold an M.S. in Economics and Computer Science from Duke University and a B.S. in Mathematics from Haverford College.
-      </p>
-      <p class="about-text" style="margin-top: 14px;">
-        Outside of research, I enjoy creative writing in both fiction and nonfiction, traveling, and hiking.
-      </p>
-    </div>
-  </section>
 
   <!-- Education -->
   <section id="education">
