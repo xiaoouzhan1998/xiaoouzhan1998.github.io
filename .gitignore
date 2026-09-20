@@ -1,0 +1,7 @@
+# 默认什么都不进 git
+*
+
+# 只放行网站本身
+!index.html
+!website_photo.JPG
+!.gitignore
